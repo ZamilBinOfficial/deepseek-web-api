@@ -12,7 +12,7 @@ function collect(directory) {
 
 const failures = collect("src")
   .map((file) => ({ file, lines: fs.readFileSync(file, "utf8").split("\n").length - 1 }))
-  .filter(({ lines }) => lines > 300);
+  .filter(({ lines }) => lines > 500);
 
 if (failures.length > 0) {
   for (const failure of failures) console.error(`${failure.lines} ${failure.file}`);

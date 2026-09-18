@@ -226,7 +226,6 @@ export class LoginManager {
     const token = await readUserToken(page);
     if (!token) return null;
     const context = await this.chrome.context();
-    const cookies = await context.cookies();
     const works = await apiTokenWorks(page, token);
     if (!works) return null;
     this.logger.info("DeepSeek session token verified successfully!");

@@ -33,7 +33,7 @@ export async function dumpAuth(
   context: BrowserContext,
   page: Page,
   file: string,
-  baseUrl: string,
+  _baseUrl?: string,
 ): Promise<DeepSeekAuth> {
   const token = await readUserToken(page);
   if (!token) throw new Error("DeepSeek localStorage 中没有 userToken，请先登录");

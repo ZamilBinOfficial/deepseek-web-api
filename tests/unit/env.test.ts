@@ -13,9 +13,9 @@ function temporaryCwd(): string {
 }
 
 describe("loadConfig DS_TOOL_REASONING", () => {
-  it("defaults to hidden", () => {
+  it("defaults to clean", () => {
     vi.stubEnv("DS_TOOL_REASONING", "");
-    expect(loadConfig(temporaryCwd()).toolReasoning).toBe("hidden");
+    expect(loadConfig(temporaryCwd()).toolReasoning).toBe("clean");
   });
 
   it("accepts clean", () => {
