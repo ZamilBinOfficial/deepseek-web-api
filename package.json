@@ -1,0 +1,68 @@
+{
+  "name": "deepseek-web-api",
+  "version": "0.1.0",
+  "description": "Unofficial local OpenAI-compatible API for authenticated chat.deepseek.com web sessions",
+  "type": "module",
+  "private": false,
+  "bin": {
+    "deepseek-web-api": "dist/index.js",
+    "dsw": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsx watch src/index.ts start",
+    "start": "node dist/index.js start",
+    "login": "node dist/index.js login",
+    "logout": "node scripts/logout.mjs",
+    "build": "tsc -p tsconfig.build.json && node scripts/chmod-bin.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "node scripts/check-comments.mjs && node scripts/check-source-lines.mjs && eslint \"src/**/*.ts\" \"tests/**/*.ts\" vitest.config.ts",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.13.1",
+  "dependencies": {
+    "playwright-core": "^1.55.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.32.0",
+    "globals": "^16.3.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.38.0",
+    "vitest": "^3.2.4"
+  },
+  "keywords": [
+    "deepseek",
+    "openai-compatible",
+    "responses-api",
+    "chat-completions",
+    "typescript",
+    "pi",
+    "proxy"
+  ],
+  "homepage": "https://github.com/ZamilBinOfficial/deepseek-web-api#readme",
+  "bugs": {
+    "url": "https://github.com/ZamilBinOfficial/deepseek-web-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZamilBinOfficial/deepseek-web-api.git"
+  },
+  "license": "MIT",
+  "author": "Zamil Bin (https://github.com/ZamilBinOfficial)",
+  "publishConfig": {
+    "access": "public"
+  }
+}
